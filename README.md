@@ -1,7 +1,14 @@
 Travis build output https://travis-ci.org/RianaFerreira/docker-react
+* Configure AWS api access keys
+
 DockerHub Images
-https://hub.docker.com/_/nginx/
-https://hub.docker.com/_/node/
+* https://hub.docker.com/_/nginx/
+* https://hub.docker.com/_/node/
+
+AWS services
+* ElasticBeanstalk
+* S3
+* IAM https://974518479342.signin.aws.amazon.com/console
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
