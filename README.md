@@ -1,14 +1,38 @@
-Travis build output https://travis-ci.org/RianaFerreira/docker-react
+### Travis build output https://travis-ci.org/RianaFerreira/docker-react
 * Configure AWS api access keys
+* Reference .travis.yml
 
-DockerHub Images
+### DockerHub Images
 * https://hub.docker.com/_/nginx/
 * https://hub.docker.com/_/node/
 
-AWS services
-* ElasticBeanstalk
+### AWS services
+* ElasticBeanstalk - add a Docker image with default settings and note the region.
 * S3
 * IAM https://974518479342.signin.aws.amazon.com/console
+
+### Troubleshoot Failing Build
+If you still see a failed deployment, try the following two steps:
+
+#### Fix One:
+
+The npm install command frequently times out on the t2.micro instance that we are using.  An easy fix is to bump up the instance type that Elastic Beanstalk is using to a t2.small.
+
+Note that a t2.small is outside of the free tier, so you will pay a tiny bit of money (likely less than one dollar if you leave it running for a few hours) for this instance.  Don't forget to close it down!  Directions for this are a few videos ahead in the lecture titled 'Environment Cleanup'.
+
+
+#### Fix Two:
+
+Try editing the 'COPY' line of your Dockerfile like so:
+
+COPY package*.json ./
+
+Sometimes AWS has a tough time with the '.' folder designation and prefers the long form ./
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
